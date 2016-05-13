@@ -1,0 +1,18 @@
+	Exporter version: 4.2.0, Blender version: 2.76 (sub 0)
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used:
+		selected layers only:  false
+		flat shading entire scene:  false
+		inline textures:  false
+	Python World class constructor completed
+	processing begun of mesh:  Model
+========= An error was encountered =========
+  File "C:\Users\mikem_000\AppData\Roaming\Blender Foundation\Blender\2.76\scripts\addons\io_export_babylon.py", line 307, in execute
+    mesh = Mesh(object, scene, nextStartFace, forcedParent, nameID, self)
+  File "C:\Users\mikem_000\AppData\Roaming\Blender Foundation\Blender\2.76\scripts\addons\io_export_babylon.py", line 756, in __init__
+    recipe = BakingRecipe(object)
+  File "C:\Users\mikem_000\AppData\Roaming\Blender Foundation\Blender\2.76\scripts\addons\io_export_babylon.py", line 1825, in __init__
+    self.backFaceCulling &= material.game_settings.use_backface_culling
+ERROR:  'NoneType' object has no attribute 'game_settings'
+========= end of processing =========
+elapsed time:  0 min, 0.017 secs

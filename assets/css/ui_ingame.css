@@ -1,0 +1,378 @@
+@font-face {
+    font-family: cabin;
+    src: url(fonts/Cabin-Regular.ttf);
+}
+
+html, body {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: cabin, Helvetica, sans-serifs;
+}
+
+#titleScreen {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	z-index: 1;
+}
+
+	#titleScreen img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	#currentGameInfo {
+		border: 1px solid black;
+		border-radius: 3px;
+		padding: 5px;
+		float: right;
+		margin-right: 20px;
+	}
+	
+	.titleButtons {
+		display: block;
+		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		border-radius: 3px;
+		font-size: 2em;
+		margin-top: 10px;
+		color: white;
+		background-color: #33FFCC;
+	}
+	
+		.titleButtons:hover {
+			cursor: pointer;
+			border: 1px solid black;
+		}
+
+#renderCanvas {
+	width: 100%;
+	height: 100%;
+	touch-action: none;
+}
+
+#statsBox{
+	background-color: lightGray;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 150px;
+	border: 1px solid gray;
+	border-bottom-right-radius: 9px;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-right: 1%;
+	-webkit-box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+	-moz-box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+	box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+}
+
+	.stat p {
+		background-color: white;
+	}
+	
+	#income p {
+		color: green;
+	}
+
+#clock {
+	background-color: lightGray;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 20%;
+	height: 40px;
+	border: 1px solid gray;
+	border-bottom-left-radius: 9px;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+	padding-left: 1%;
+	-webkit-box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+	-moz-box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+	box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+}
+
+	#time {
+		display: block;
+		float: left;
+		background-color: white;
+		border: 1px solid darkGray;
+		border-radius: 3px;
+		position: relative;
+		top: 7.5px;
+		height: 25px;
+		width: 80%;
+		line-height: 25px;
+		text-align: center;
+	}
+	
+	#speedup {
+		display: block;
+		float: left;
+		position: relative;
+		top: 7.5px;
+		height: 25px;
+		line-height: 25px;
+		margin-left: 7px;
+	}
+	
+		#speedup:hover {
+			color: green;
+			cursor: pointer;
+		}
+
+#playerTools {
+	background-color: lightGray;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 380px;
+	height: 7%;
+	padding-left: 1%;
+	border: 1px solid gray;
+	border-top-right-radius: 9px;
+	-webkit-box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+	-moz-box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+	box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+}
+
+	#playerTools ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	#playerTools li {
+		border: 2px solid grey;
+		background-color: white;
+		display: inline;
+		float: left;
+		margin-top: 1%;
+		margin-right: 3%;
+		width: 40px;
+		height: 40px;
+		box-shadow: 4px 4px 8px -1px rgba(0,0,0,0.75);
+		border-radius: 2em;
+		display: block;
+	}
+	
+	#playerTools li:hover {
+		border: 2px solid black;
+		cursor: pointer;
+	}
+	
+	#editTools li {
+		border: 2px solid grey;
+		width: 30px;
+		height: 30px;
+		display: block;
+	}
+	
+	#editTools li:hover {
+		border: 2px solid black;
+		cursor: pointer;
+	}
+
+#buildingInfo ul {
+	background-color: white;
+	border: 1px solid black;
+}
+
+#settingsList {
+	width: 300px;
+}
+	
+	#settingsList li {
+		border: 2px solid grey;
+		background-color: white;
+		display: inline;
+		margin-top: 1%;
+		margin-right: 3%;
+		width: 60px;
+		height: 60px;
+		box-shadow: 4px 4px 8px -1px rgba(0,0,0,0.75);
+		border-radius: 2em;
+		display: block;
+	}
+	
+	#settingsList li:hover {
+		border: 2px solid black;
+		cursor: pointer;
+	}
+	
+.buildList {
+	background-color: lightGray;
+	position: fixed;
+	bottom: 6%;
+	left: 0;
+	width: 350px;
+	height: 40%;
+	border: 1px solid gray;
+	border-top-right-radius: 9px;
+	padding-left: 1%;
+	-webkit-box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+	-moz-box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+	box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+	display: none;
+}
+
+	.buildList h2 {
+		width: 70%;
+		float: left;
+	}
+
+	.buildList > ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		overflow-y: scroll;
+		clear: both;
+		height: 70%;
+		border-top: 1px solid gray;
+	}
+	
+	.buildList img {
+		border: 1px solid black;
+	}
+	
+.close {
+	float: right;
+	color: #A80000;
+	font-size: 120%;
+	margin-right: 4%;
+	width: 10%;
+}
+
+	.close:hover {
+		color: #E80000;
+		cursor: pointer;
+	}
+
+.listedBuilding {
+	display: block;
+	border: 1px solid darkGray;
+	height: 150px;
+	width: 95%;
+	font-size: 70%;
+	border-radius: 3px;
+	background-color: white;
+}
+
+	.listedBuilding  img {
+		float: left;
+		clear: both;
+		position: relative;
+		height: 80px;
+		width: 80px;
+		top: 10px;
+		left: 10px;
+		margin-right: 10px;
+	}
+	
+	.listedBuilding:hover {
+		border: 1px solid black;
+		cursor: pointer;
+	}
+	
+.buildingName, .buildingDesc {
+	width: 70%;
+	float: right;
+}
+
+.buildingDesc {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#settings{
+	background-image: url("../graphics/settings_icon.png");
+	background-size: cover;
+}
+
+#houses {
+	background-image: url("../graphics/residential_icon.png");
+	background-size: cover;
+}
+
+#commercial {
+	background-image: url("../graphics/commercial_icon.png");
+	background-size: cover;
+}
+
+#services {
+	background-image: url("../graphics/roads_icon.png");
+	background-size: cover;
+}
+
+#misc {
+	background-image: url("../graphics/misc_icon.png");
+	background-size: cover;
+}
+
+#rotate {
+	background-image: url("../graphics/rotate_icon.png");
+	background-size: cover;
+}
+
+#destroy {
+	background-image: url("../graphics/destroy_icon.png");
+	background-size: cover;
+}
+
+#save {
+	background-image: url("../graphics/save_icon.png");
+	background-size: cover;
+}
+
+#deleteSave {
+	background-image: url("../graphics/delete_icon.png");
+	background-size: cover;
+}
+
+#guide {
+	background-image: url("../graphics/help_icon.png");
+	background-size: cover;
+}
+
+#playerInfo {
+	background-color: lightGray;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 20%;
+	height: 40px;
+	border: 1px solid gray;
+	border-top-left-radius: 9px;
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+	padding-left: 1%;
+	-webkit-box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+	-moz-box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+	box-shadow: 4px -3px 24px -1px rgba(143,143,143,1);
+}
+
+	#money{
+		display: block;
+		background-color: white;
+		border: 1px solid darkGray;
+		border-radius: 3px;
+		position: relative;
+		top: 7.5px;
+		height: 25px;
+		width: 80%;
+		line-height: 25px;
+		text-align: center;
+	}
