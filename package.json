@@ -1,0 +1,14 @@
+{
+  "name": "townsimple",
+  "version": "1.0.0",
+  "description": "3D WebGL Town Simulation Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Michael Mahoney",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

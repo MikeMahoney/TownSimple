@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <title>Town</title>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-		<script src="assets/js/lib/jquery-1.11.2.min.js"></script>
-		<script src="assets/js/lib/easystar-0.2.3.min.js"></script>
-		<!-- Babylon.js -->
-        <script src="assets/js/lib/hand.minified-1.3.7.js"></script>
-        <script src="assets/js/lib/cannon.min.js"></script>
-        <script src="assets/js/lib/oimo.min.js"></script>
-        <script src="assets/js/lib/babylon.2.2.js"></script>
-		<!-- Babylon.js -->
+	<title>Town</title>
 
-		<link rel="stylesheet" type="text/css" href="assets/css/ui_ingame.css">
+	<script src="js/lib/jquery-1.11.2.min.js"></script>
+	<script src="js/lib/easystar-0.2.3.min.js"></script>
+	<!-- Babylon.js -->
+	<script src="js/lib/hand.minified-1.3.7.js"></script>
+	<script src="js/lib/cannon.min.js"></script>
+	<script src="js/lib/oimo.min.js"></script>
+	<script src="js/lib/babylon.2.2.js"></script>
+	<!-- Babylon.js -->
 
-    </head>
+	<link rel="stylesheet" type="text/css" href="css/ui_ingame.css">
+
+</head>
+
 <body>
 
 	<div id="titleScreen">
-		<img src="assets/graphics/town_logo.png">
+		<img src="graphics/town_logo.png">
 		<div id="currentGameInfo">
 			<h3>Current Game Save</h3>
 			<h4>Game Info:</h4>
@@ -30,7 +32,7 @@
 		<div class="titleButtons" id="continueButton"><strong>Continue</strong></div>
 	</div>
 
-    <canvas id="renderCanvas"></canvas>
+	<canvas id="renderCanvas"></canvas>
 
 	<div id="statsBox">
 		<div class="stat" id="population">
@@ -46,20 +48,22 @@
 			<p>$0</p>
 		</div>
 	</div>
-	
+
 	<div id="clock">
 		<strong id="time"></strong>
 		<strong id="speedup">>></strong>
 	</div>
-	
+
 	<div class="buildList" id="buildingInfo">
-		<h2>Building Info:</h2><div class="close">x</div>
+		<h2>Building Info:</h2>
+		<div class="close">x</div>
 		<ul>
 		</ul>
 	</div>
-	
+
 	<div class="buildList" id="gameGuide">
-		<h2>Game Guide:</h2><div class="close">x</div>
+		<h2>Game Guide:</h2>
+		<div class="close">x</div>
 		<ul>
 			<li><strong>Controls:</strong><br />
 				<ul>
@@ -70,15 +74,22 @@
 				</ul>
 			</li>
 			<br />
-			<li><strong>Houses:</strong><br />Houses add citizens to your town. The higher quality the house, the more citizens it provides.</li>
+			<li><strong>Houses:</strong><br />Houses add citizens to your town. The higher quality the house, the more
+				citizens it provides.</li>
 			<br />
-			<li><strong>Commercial:</strong><br />Commercial buildings provide jobs for your citizens. They also generate income. Each commercial building has a base income. A building's income increases based on how many citizens are working there and how happy they are.</li>
+			<li><strong>Commercial:</strong><br />Commercial buildings provide jobs for your citizens. They also
+				generate income. Each commercial building has a base income. A building's income increases based on how
+				many citizens are working there and how happy they are.</li>
 			<br />
-			<li><strong>Services:</strong><br />Services are like commercial buildings except that they provide less income but more Happiness. They are also more helpful in terms of planning the town, such as using roads to make sure buildings don't get blocked.</li>
+			<li><strong>Services:</strong><br />Services are like commercial buildings except that they provide less
+				income but more Happiness. They are also more helpful in terms of planning the town, such as using roads
+				to make sure buildings don't get blocked.</li>
 			<br />
-			<li><strong>Misc:</strong><br />Miscellaneous structures don't provide income but they increase Happiness.</li>
+			<li><strong>Misc:</strong><br />Miscellaneous structures don't provide income but they increase Happiness.
+			</li>
 			<br />
-			<li><strong>Happiness:</strong><br />Each building gains a bonus to income: Happiness x Base Income.Your town's Happiness is based on a number of factors:
+			<li><strong>Happiness:</strong><br />Each building gains a bonus to income: Happiness x Base Income.Your
+				town's Happiness is based on a number of factors:
 				<ul>
 					<li>Each citizen has a job.</li>
 					<li>There are enough services.</li>
@@ -88,21 +99,23 @@
 			</li>
 		</ul>
 	</div>
-	
+
 	<div class="buildList" id="settingsList">
-		<h2>Settings</h2><div class="close">x</div>
+		<h2>Settings</h2>
+		<div class="close">x</div>
 		<ul>
 			<li class="settingsButton" id="save"></li>
 			<li class="settingsButton" id="deleteSave"></li>
 			<li class="settingsButton" id="guide"></li>
 		</ul>
 	</div>
-	
+
 	<div class="buildList" id="houseList">
-		<h2>Houses</h2><div class="close">x</div>
+		<h2>Houses</h2>
+		<div class="close">x</div>
 		<ul>
 			<li class="listedBuilding" id="shack">
-				<img src="assets/graphics/shackThumb.png" />
+				<img src="graphics/shackThumb.png" />
 				<h3 class="buildingName">Shack</h3>
 				<ul class="buildingDesc">
 					<li>The lowest quality house.</li>
@@ -111,7 +124,7 @@
 				</ul>
 			</li>
 			<li class="listedBuilding" id="simpleHouse">
-				<img src="assets/graphics/simpleHouseThumb.png" />
+				<img src="graphics/simpleHouseThumb.png" />
 				<h3 class="buildingName">Simple House</h3>
 				<ul class="buildingDesc">
 					<li>A simple house.</li>
@@ -123,10 +136,11 @@
 	</div>
 
 	<div class="buildList" id="commercialList">
-		<h2>Commercial</h2><div class="close">x</div>
+		<h2>Commercial</h2>
+		<div class="close">x</div>
 		<ul>
 			<li class="listedBuilding" id="simpleShop">
-				<img src="assets/graphics/shopThumb.png" />
+				<img src="graphics/shopThumb.png" />
 				<h3 class="buildingName">Simple Shop</h3>
 				<ul class="buildingDesc">
 					<li>A simple shop for simple needs.</li>
@@ -137,7 +151,7 @@
 				</ul>
 			</li>
 			<li class="listedBuilding" id="bar">
-				<img src="assets/graphics/barThumb.png" />
+				<img src="graphics/barThumb.png" />
 				<h3 class="buildingName">Bar</h3>
 				<ul class="buildingDesc">
 					<li>A place for in-depth political discourse.</li>
@@ -148,7 +162,7 @@
 				</ul>
 			</li>
 			<li class="listedBuilding" id="sking">
-				<img src="assets/graphics/skingThumb.png" />
+				<img src="graphics/skingThumb.png" />
 				<h3 class="buildingName">The Sandwich King</h3>
 				<ul class="buildingDesc">
 					<li>A restaurant that specialises in the best sandwiches ever to grace the planet.</li>
@@ -159,7 +173,7 @@
 				</ul>
 			</li>
 			<li class="listedBuilding" id="factory">
-				<img src="assets/graphics/factoryThumb.png" />
+				<img src="graphics/factoryThumb.png" />
 				<h3 class="buildingName">Factory</h3>
 				<ul class="buildingDesc">
 					<li>A factory that manufactures...stuff.</li>
@@ -173,10 +187,11 @@
 	</div>
 
 	<div class="buildList" id="serviceList">
-		<h2>Services</h2><div class="close">x</div>
+		<h2>Services</h2>
+		<div class="close">x</div>
 		<ul>
 			<li class="listedBuilding" id="surgery">
-				<img src="assets/graphics/surgeryThumb.png" />
+				<img src="graphics/surgeryThumb.png" />
 				<h3 class="buildingName">Doctor's Surgery</h3>
 				<ul class="buildingDesc">
 					<li>A surgery to keep your citizens healthy and happy.</li>
@@ -187,7 +202,7 @@
 				</ul>
 			</li>
 			<li class="listedBuilding" id="road">
-				<img src="assets/graphics/roadThumb.png" />
+				<img src="graphics/roadThumb.png" />
 				<h3 class="buildingName">Road</h3>
 				<ul class="buildingDesc">
 					<li>Helps tie the town together and keep buildings unobstructed.</li>
@@ -196,12 +211,13 @@
 			</li>
 		</ul>
 	</div>
-	
+
 	<div class="buildList" id="miscList">
-		<h2>Miscellaneous</h2><div class="close">x</div>
+		<h2>Miscellaneous</h2>
+		<div class="close">x</div>
 		<ul>
 			<li class="listedBuilding" id="tree">
-				<img src="assets/graphics/treeThumb.png" />
+				<img src="graphics/treeThumb.png" />
 				<h3 class="buildingName">Tree</h3>
 				<ul class="buildingDesc">
 					<li>Creates a nicer atmosphere, keeps citizens happy.</li>
@@ -209,10 +225,11 @@
 				</ul>
 			</li>
 			<li class="listedBuilding" id="statue">
-				<img src="assets/graphics/statueThumb.png" />
+				<img src="graphics/statueThumb.png" />
 				<h3 class="buildingName">Gold Statue of Mayor</h3>
 				<ul class="buildingDesc">
-					<li>A statue that celebrates a mayor who brought prosperity to the town. Fills the citizens with pride.</li>
+					<li>A statue that celebrates a mayor who brought prosperity to the town. Fills the citizens with
+						pride.</li>
 					<li><strong>Price: </strong> $10000000</li>
 				</ul>
 			</li>
@@ -236,11 +253,12 @@
 	<div id="playerInfo">
 		<strong id="money">$0</strong>
 	</div>
-	
+
 	<!-- Main App Files -->
-	<script src="assets/js/ui_controls.js"></script>
-	<script src="assets/js/classes.js"></script>
-	<script src="assets/js/app.js"></script>
+	<script src="js/ui_controls.js"></script>
+	<script src="js/classes.js"></script>
+	<script src="js/app.js"></script>
 	<!-- Main App Files -->
 </body>
+
 </html>
